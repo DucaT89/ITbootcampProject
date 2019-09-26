@@ -8,10 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import rs.Itbootcamp.humanity.page.objects.HumanityHome;
 import rs.Itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.Itbootcamp.humanity.page.objects.HumanityStaff;
+import rs.Itbootcamp.humanity.utility.ExcelUtils;
 
-public class HumanityAddNewEmployeeTests {
+public class HumanityAddEmployeeFromExcellTest {
+	public static boolean TestAddEMPLOYEE() throws InterruptedException {
+		ExcelUtils.setExcell("Data TABELE.xls");
+		ExcelUtils.setWorkSheet(1);
 
-	public static boolean Test5() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
@@ -28,33 +31,28 @@ public class HumanityAddNewEmployeeTests {
 			HumanityHome.clickLoginButton(driver);
 
 			Thread.sleep(3000);
-			if (!driver.getCurrentUrl().equals("https://beta4.humanity.com/app/dashboard/")) {
+			if (!driver.getCurrentUrl().contains("https://beta4.humanity.com/app/dashboard/")) {
 				System.out.println("neuspesan Login");
 				return false;
 			} else
 				System.out.println("uspesan Login");
 
 			HumanityMenu.clickStaff(driver);
-
+			HumanityStaff.clickAddEmployee(driver);
 			Thread.sleep(3000);
 
-			if (!driver.getCurrentUrl().contains("https://beta4.humanity.com/app/staff/list/load/true/")) {
-				System.out.println("neuspesan staff click");
-				return false;
-			} else
-				System.out.println("na staff stranici smo");
-
 			// adding employee
-			
-			
-			HumanityStaff.clickAddEmployee(driver);
-			HumanityStaff.clickEnterEmployeeName(driver,1);
-			HumanityStaff.inputEmployeeName(driver,1, "joca");
-			HumanityStaff.clickEnterEmployeeLastame(driver,1);
-			HumanityStaff.inputEmployeeLastname(driver,1, "Jocic");
-			HumanityStaff.clickEnterEmployeeEmail(driver,1);
-			HumanityStaff.inputEmployeeEmail(driver,1, "joca123456@gmail.com");
 
+			for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
+				String name = ExcelUtils.getDataAt(i, 0);
+				String lastname = ExcelUtils.getDataAt(i, 1);
+				String email = ExcelUtils.getDataAt(i, 2);
+
+				HumanityStaff.inputEmployeeName(driver, i, name);
+				HumanityStaff.inputEmployeeLastname(driver, i, lastname);
+				HumanityStaff.inputEmployeeEmail(driver, i, email);
+
+			}
 			HumanityStaff.clickSubmitEmployee(driver);
 
 		} catch (Exception ex) {
@@ -62,17 +60,17 @@ public class HumanityAddNewEmployeeTests {
 		}
 		driver.navigate().to("https://beta4.humanity.com/app/staff/list/load/true/");
 		Thread.sleep(1500);
-		
+
 		if (!driver.getCurrentUrl().contains("https://beta4.humanity.com/app/staff/assign")) {
 			System.out.println("neuspesao dodavanje");
 			return false;
-		} else 
+		} else
+
+			System.out.println("Uspesno dodavanje");
 		
-        System.out.println("Uspesno dodavanje");
 		Thread.sleep(2000);
 		driver.quit();
 
 		return true;
-
 	}
-}
+	}

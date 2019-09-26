@@ -26,7 +26,6 @@ public class HumanityLoginTests {
 			HumanityHome.inputLoginPass(driver, "Zvezdara");
 			HumanityHome.clickLoginButton(driver);
 
-			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 			Thread.sleep(3000);
 			if (!driver.getCurrentUrl().equals("https://beta4.humanity.com/app/dashboard/")) {
 				System.out.println("neuspesan Login");
@@ -38,11 +37,12 @@ public class HumanityLoginTests {
 
 		catch (Exception ex) {
 			System.out.println(ex.toString());
+		} finally {
+			Thread.sleep(2000);
+			driver.quit();
 		}
-		Thread.sleep(4000);
-		driver.quit();
+
 		return true;
 
 	}
-
 }

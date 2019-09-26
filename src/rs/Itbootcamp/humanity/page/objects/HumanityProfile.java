@@ -10,7 +10,7 @@ public class HumanityProfile {
 	private static String SETTINGS_BTN_XPATH = "//div[@class='userm userm-mainPage']//a[contains(text(),'Settings')]";
 	private static String AVAILABILITY_XPATH = "//div[@class='userm userm-mainPage']//a[contains(text(),'Availability')]";
 	private static String SIGNOUT_BTN_XPATH = "//a[contains(text(),'Sign Out')]";
-	private static String App_Version_num_XPATH = "//b[contains(text(),'9.5.5')]";
+	private static String App_Version_num = "9.5.5";
 
 	// Profile picture
 	public static WebElement getAvatar(WebDriver driver) {
@@ -58,7 +58,7 @@ public class HumanityProfile {
 	}
 	// Version 
 		public static void getVersion(WebDriver driver) {
-			System.out.println("App Version = 9.5.5");
+			System.out.println(App_Version_num);
 		}
 
 }
