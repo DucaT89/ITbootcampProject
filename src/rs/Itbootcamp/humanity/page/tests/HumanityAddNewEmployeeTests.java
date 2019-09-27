@@ -45,15 +45,14 @@ public class HumanityAddNewEmployeeTests {
 				System.out.println("na staff stranici smo");
 
 			// adding employee
-			
-			
+
 			HumanityStaff.clickAddEmployee(driver);
-			HumanityStaff.clickEnterEmployeeName(driver,1);
-			HumanityStaff.inputEmployeeName(driver,1, "joca");
-			HumanityStaff.clickEnterEmployeeLastame(driver,1);
-			HumanityStaff.inputEmployeeLastname(driver,1, "Jocic");
-			HumanityStaff.clickEnterEmployeeEmail(driver,1);
-			HumanityStaff.inputEmployeeEmail(driver,1, "joca123456@gmail.com");
+			HumanityStaff.clickEnterEmployeeName(driver, 1);
+			HumanityStaff.inputEmployeeName(driver, 1, "joca");
+			HumanityStaff.clickEnterEmployeeLastame(driver, 1);
+			HumanityStaff.inputEmployeeLastname(driver, 1, "Jocic");
+			HumanityStaff.clickEnterEmployeeEmail(driver, 1);
+			HumanityStaff.inputEmployeeEmail(driver, 1, "joca123456@gmail.com");
 
 			HumanityStaff.clickSubmitEmployee(driver);
 
@@ -62,13 +61,13 @@ public class HumanityAddNewEmployeeTests {
 		}
 		driver.navigate().to("https://beta4.humanity.com/app/staff/list/load/true/");
 		Thread.sleep(1500);
-		
+
 		if (!driver.getCurrentUrl().contains("https://beta4.humanity.com/app/staff/assign")) {
 			System.out.println("neuspesao dodavanje");
 			return false;
-		} else 
-		
-        System.out.println("Uspesno dodavanje");
+		} else
+
+			System.out.println("Uspesno dodavanje");
 		Thread.sleep(2000);
 		driver.quit();
 

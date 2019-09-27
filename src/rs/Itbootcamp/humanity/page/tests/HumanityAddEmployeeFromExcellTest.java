@@ -35,6 +35,7 @@ public class HumanityAddEmployeeFromExcellTest {
 				System.out.println("neuspesan Login");
 				return false;
 			} else
+
 				System.out.println("uspesan Login");
 
 			HumanityMenu.clickStaff(driver);
@@ -67,10 +68,10 @@ public class HumanityAddEmployeeFromExcellTest {
 		} else
 
 			System.out.println("Uspesno dodavanje");
-		
+
 		Thread.sleep(2000);
 		driver.quit();
 
 		return true;
 	}
-	}
+}

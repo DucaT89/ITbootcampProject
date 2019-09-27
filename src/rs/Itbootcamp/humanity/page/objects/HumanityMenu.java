@@ -15,8 +15,8 @@ public class HumanityMenu {
 	private static String STAFF_XPATH = "//a[@id='sn_staff']//span[@class='primNavQtip__inner']";
 	private static String PAYROLL_XPATH = "//a[@id='sn_payroll']//span[@class='primNavQtip__inner']";
 	private static String REPORTS_XPATH = "//a[@id='sn_reports']//span[@class='primNavQtip__inner']";
-	private static String SETTINGS_XPATH ="//i[@class='primNavQtip__icon icon-gear']";
-	private static String AVATAR_XPATH="//img[@id='tr_avatar']";
+	private static String SETTINGS_XPATH = "//i[@class='primNavQtip__icon icon-gear']";
+	private static String AVATAR_XPATH = "//img[@id='tr_avatar']";
 
 	// get and click Dashboard
 	public static WebElement getDashboard(WebDriver driver) {
@@ -89,21 +89,23 @@ public class HumanityMenu {
 	public static void clickReports(WebDriver driver) {
 		getReports(driver).click();
 	}
+
 	// get and click Settings
-		public static WebElement getSettings(WebDriver driver) {
-			return driver.findElement(By.xpath(SETTINGS_XPATH));
-		}
+	public static WebElement getSettings(WebDriver driver) {
+		return driver.findElement(By.xpath(SETTINGS_XPATH));
+	}
 
-		public static void clickSettings(WebDriver driver) {
-			getSettings(driver).click();
-		}
-		// Profile picture
-		public static WebElement getAvatar(WebDriver driver) {
-			return driver.findElement(By.xpath(AVATAR_XPATH));
-		}
+	public static void clickSettings(WebDriver driver) {
+		getSettings(driver).click();
+	}
 
-		public static void clickAvatar(WebDriver driver) {
-			getAvatar(driver).click();
-		}
+	// Profile picture
+	public static WebElement getAvatar(WebDriver driver) {
+		return driver.findElement(By.xpath(AVATAR_XPATH));
+	}
+
+	public static void clickAvatar(WebDriver driver) {
+		getAvatar(driver).click();
+	}
 
 }

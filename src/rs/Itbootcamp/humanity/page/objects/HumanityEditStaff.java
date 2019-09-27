@@ -32,9 +32,8 @@ public class HumanityEditStaff {
 
 	public static void inputPhotoPath(WebDriver driver) {
 		getUploadPicture(driver).sendKeys(IMAGE_PATH);
-		
+
 	}
-	
 
 	// Nickname button and input
 	public static WebElement getNickname(WebDriver driver) {

@@ -11,7 +11,7 @@ import rs.Itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.Itbootcamp.humanity.page.objects.HumanityProfile;
 
 public class HumanityEditStaffTest {
-	
+
 	public static boolean Test3() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -36,24 +36,23 @@ public class HumanityEditStaffTest {
 			} else
 				System.out.println("uspesan Login");
 			Thread.sleep(4000);
-			
+
 			HumanityMenu.clickAvatar(driver);
 			HumanityProfile.getSettingsButton(driver);
 			HumanityProfile.clickSettingsButton(driver);
 			Thread.sleep(2000);
 			HumanityEditStaff.getUploadPicture(driver);
-		   
+
 			HumanityEditStaff.inputPhotoPath(driver);
 			Thread.sleep(2500);
 			HumanityEditStaff.getNickname(driver);
 			HumanityEditStaff.clickNickname(driver);
 			HumanityEditStaff.inputNickname(driver, "perica");
-			
+
 			HumanityEditStaff.getSaveEmployee(driver);
 			HumanityEditStaff.clickSaveEmployee(driver);
 
-			
-		}catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println(ex.toString());
 		}
 		System.out.println("edits complited");

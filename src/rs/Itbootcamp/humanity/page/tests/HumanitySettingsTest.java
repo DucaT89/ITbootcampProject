@@ -36,10 +36,10 @@ public class HumanitySettingsTest {
 			} else
 				System.out.println("uspesan Login");
 			Thread.sleep(4000);
-			
+
 			HumanityMenu.getSettings(driver);
 			HumanityMenu.clickSettings(driver);
-			
+
 			Thread.sleep(2000);
 
 			HumanitySettings.getCountry(driver);
@@ -48,12 +48,11 @@ public class HumanitySettingsTest {
 			HumanitySettings.inputLanguage(driver, "American English");
 			HumanitySettings.getTimeFormat(driver);
 			HumanitySettings.inputTimeFormat(driver, "24 hour");
-			
+
 			HumanitySettings.clickSaveSettings(driver);
 			Thread.sleep(3000);
 
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println(ex.toString());
 		}
 		System.out.println("Succesfull settings");
@@ -61,6 +60,5 @@ public class HumanitySettingsTest {
 		driver.quit();
 		return true;
 
-	
 	}
 }

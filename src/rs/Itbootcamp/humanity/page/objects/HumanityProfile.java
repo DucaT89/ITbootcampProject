@@ -56,9 +56,10 @@ public class HumanityProfile {
 	public static void clickSignOutButton(WebDriver driver) {
 		getSignOutButton(driver).click();
 	}
-	// Version 
-		public static void getVersion(WebDriver driver) {
-			System.out.println(App_Version_num);
-		}
+
+	// Version
+	public static void getVersion(WebDriver driver) {
+		System.out.println(App_Version_num);
+	}
 
 }
